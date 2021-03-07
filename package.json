@@ -30,7 +30,6 @@
 		"@babel/preset-env": "^7.12.13",
 		"@commitlint/cli": "^12.0.1",
 		"@commitlint/config-conventional": "^12.0.1",
-		"@types/mongoose": "^5.10.3",
 		"eslint": "^7.21.0",
 		"eslint-config-prettier": "^7.2.0",
 		"eslint-plugin-prettier": "^3.3.1",
