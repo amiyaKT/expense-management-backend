@@ -1,14 +1,22 @@
 import { gql } from 'apollo-server-express';
 import { CatTypeDef } from './Cat/Cat';
 import { HealthTypeDef } from './Health';
+import { UserTypeDef } from './User/User';
+import { UserAuthDetailTypeDef } from './UserAuthDetail/UserAuthDetail';
 
-const BaseTypeDef = gql`
+const RootTypeDef = gql`
 	type Query {
-		empty: String
+		root: String
 	}
 	type Mutation {
-		empty: String
+		root: String
 	}
 `;
 
-export const TypeDefs = [BaseTypeDef, HealthTypeDef, CatTypeDef];
+export const TypeDefs = [
+	RootTypeDef,
+	HealthTypeDef,
+	CatTypeDef,
+	UserTypeDef,
+	UserAuthDetailTypeDef,
+];

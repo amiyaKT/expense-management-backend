@@ -1,4 +1,12 @@
-import { CatResolver } from './Cat/Cat';
 import { HealthResolver } from './Health';
 
-export const Resolvers = [HealthResolver, CatResolver];
+import { CatResolver } from './Cat/Cat';
+import { UserResolver } from './User/User';
+import { UserAuthResolver } from './UserAuthDetail/UserAuthDetail';
+
+export const Resolvers = [
+	HealthResolver,
+	CatResolver,
+	UserResolver,
+	UserAuthResolver,
+];

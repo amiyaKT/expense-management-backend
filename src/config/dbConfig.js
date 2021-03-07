@@ -6,5 +6,6 @@ export const mongodbCon = connect(
 	{
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
+		useCreateIndex: true,
 	}
 );

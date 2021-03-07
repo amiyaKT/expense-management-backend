@@ -1,5 +1,5 @@
 {
 	"watch": ["src"],
 	"ext": "js,json",
-	"exec": "babel-node -r dotenv/config src/index.js dotenv_config_path=.env.dev"
+	"exec": "babel-node --trace-deprecation -r dotenv/config src/index.js dotenv_config_path=.env.dev"
 }
