@@ -1,8 +1,12 @@
 import { gql } from 'apollo-server-express';
-import { CatTypeDef } from './Cat/Cat';
+
 import { HealthTypeDef } from './Health';
-import { UserTypeDef } from './User/User';
-import { UserAuthDetailTypeDef } from './UserAuthDetail/UserAuthDetail';
+
+import { ScalarTypeDefs } from './Scalars/Scalar';
+
+import { ApplicationTypes } from './Types/Types';
+import { ApplicationInputs } from './Inputs/Inputs';
+import { ApplicationTypeDefs } from './modelTypeDefs/modelTypeDefs';
 
 const RootTypeDef = gql`
 	type Query {
@@ -15,8 +19,9 @@ const RootTypeDef = gql`
 
 export const TypeDefs = [
 	RootTypeDef,
+	ScalarTypeDefs,
 	HealthTypeDef,
-	CatTypeDef,
-	UserTypeDef,
-	UserAuthDetailTypeDef,
+	...ApplicationInputs,
+	...ApplicationTypes,
+	...ApplicationTypeDefs,
 ];

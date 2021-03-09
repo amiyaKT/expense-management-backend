@@ -3,7 +3,7 @@ import {
 	createUserWithPassword,
 	fetchUserByUserId,
 	fetchUserWithAuthDetail,
-} from '../../services/userService';
+} from '../../services/UserService';
 
 export const UserResolver = {
 	Query: {
@@ -12,7 +12,6 @@ export const UserResolver = {
 	},
 	Mutation: {
 		createUser: (_, { input }) => createUser(input),
-		createUserWithPassword: (_, { input }) =>
-			createUserWithPassword(input.user, input.password),
+		createUserWithPassword: (_, { input }) => createUserWithPassword(input),
 	},
 };
