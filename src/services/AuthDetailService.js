@@ -13,7 +13,6 @@ export const createNewPassword = async (password) => {
 			passwords: [
 				{
 					isCurrent: true,
-					createdOn: new Date(),
 					password: `${hashedPasswordSecret}.${hashedPassword}`,
 				},
 			],

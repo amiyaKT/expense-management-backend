@@ -3,7 +3,10 @@ import { Schema, model } from 'mongoose';
 const AuthDetailSchema = new Schema({
 	passwords: [
 		{
-			createdOn: Date,
+			createdOn: {
+				type: Date,
+				default: Date.now,
+			},
 			password: {
 				type: String,
 				required: true,
