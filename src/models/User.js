@@ -10,9 +10,13 @@ const UserSchema = new Schema({
 		required: true,
 		unique: true,
 	},
-	authDetail: {
+	authDetailId: {
 		type: Schema.Types.ObjectId,
 		ref: 'AuthDetail',
+	},
+	registeredOn: {
+		type: Schema.Types.Date,
+		default: Date.now,
 	},
 });
 

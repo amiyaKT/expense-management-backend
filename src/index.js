@@ -14,6 +14,7 @@ const setupServer = async () => {
 		const server = new ApolloServer({
 			typeDefs: TypeDefs,
 			resolvers: Resolvers,
+			tracing: true,
 		});
 
 		server.applyMiddleware({ app, path: CONSTANTS.ENVIRONMENT.PATH });

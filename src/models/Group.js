@@ -13,6 +13,18 @@ const GroupSchema = new Schema({
 		type: Boolean,
 		default: false,
 	},
+	admins: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: 'User',
+		},
+	],
+	members: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: 'User',
+		},
+	],
 });
 
 export const Group = model('Group', GroupSchema);

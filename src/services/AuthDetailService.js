@@ -38,3 +38,7 @@ export const resetPassword = async (userId, password) => {
 		throw error;
 	}
 };
+
+export const getAuthDetailByUserId = async (id) => {
+	return await AuthDetail.findById(id);
+};

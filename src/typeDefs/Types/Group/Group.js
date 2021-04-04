@@ -6,7 +6,7 @@ export const GroupType = gql`
 		name: String!
 		createBy: ID!
 		isDefaultGroup: Boolean
-		admins: [ID!]
-		members: [ID!]
+		admins: [User]
+		members: [User]
 	}
 `;
