@@ -11,13 +11,27 @@ export const createGroup = async (groupInput) => {
 
 export const findGroups = async (userId, isDefault = true) => {
 	try {
-		if (isDefault) {
-			return await Group.findOne({
-				isDefault,
-			});
-		} else {
-			return await Group.where('userId').equals(userId);
-		}
+		const group = await Group.find()
+			.where('isDefault', isDefault)
+			.where('createdBy', userId)
+			.populate('admins')
+			.populate('members')
+			.exec();
+		return group;
+	} catch (error) {
+		throw error;
+	}
+};
+
+export const getDefaultGroup = async (userId) => {
+	try {
+		return await Group.findOne({
+			createdBy: userId,
+			isDefault: true,
+		})
+			.populate('admins')
+			.populate('members')
+			.exec();
 	} catch (error) {
 		throw error;
 	}

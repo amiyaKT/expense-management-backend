@@ -5,7 +5,7 @@ const GroupSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	created_by: {
+	createdBy: {
 		type: Schema.Types.ObjectId,
 		ref: 'User',
 	},

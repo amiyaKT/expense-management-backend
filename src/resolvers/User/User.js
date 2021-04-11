@@ -1,4 +1,5 @@
 import { getAuthDetailByUserId } from '../../services/AuthDetailService';
+import { findGroups, getDefaultGroup } from '../../services/GroupService';
 import {
 	createUser,
 	createUserWithPassword,
@@ -16,6 +17,12 @@ export const UserResolver = {
 	User: {
 		authDetail: ({ authDetailId }) => {
 			return getAuthDetailByUserId(authDetailId);
+		},
+		defaultGroup: ({ id }) => {
+			return getDefaultGroup(id);
+		},
+		groups: ({ id }) => {
+			return findGroups(id, false);
 		},
 	},
 };

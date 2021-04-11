@@ -8,5 +8,7 @@ export const UserType = gql`
 		registeredOn: Date!
 		authDetailId: ID
 		authDetail: AuthDetail
+		defaultGroup: Group
+		groups: [Group]
 	}
 `;

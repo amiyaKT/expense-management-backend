@@ -4,7 +4,7 @@ export const GroupInput = gql`
 	input GroupInput {
 		name: String!
 		createdBy: ID!
-		isDefaultGroup: Boolean
+		isDefault: Boolean
 		admins: [ID!]
 		members: [ID!]
 	}
