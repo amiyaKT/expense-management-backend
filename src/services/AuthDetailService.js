@@ -13,7 +13,6 @@ export const createNewPassword = async (password) => {
 			passwords: [
 				{
 					isCurrent: true,
-					createdOn: new Date(),
 					password: `${hashedPasswordSecret}.${hashedPassword}`,
 				},
 			],
@@ -38,4 +37,8 @@ export const resetPassword = async (userId, password) => {
 	} catch (error) {
 		throw error;
 	}
+};
+
+export const getAuthDetailByUserId = async (id) => {
+	return await AuthDetail.findById(id);
 };

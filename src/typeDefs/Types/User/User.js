@@ -5,6 +5,10 @@ export const UserType = gql`
 		id: ID!
 		name: String!
 		email: String!
+		registeredOn: Date!
+		authDetailId: ID
 		authDetail: AuthDetail
+		defaultGroup: Group
+		groups: [Group]
 	}
 `;
